@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Local dev-only data (e.g. contact form submissions before the API exists)
+.data/
+
+# Laravel
+/apps/api/storage/*.key
+/apps/api/storage/framework/cache/*
+/apps/api/storage/framework/sessions/*
+/apps/api/storage/framework/views/*
+/apps/api/storage/logs/*
+/apps/api/bootstrap/cache/*
+/apps/api/public/storage
+
+# Environment — never commit real secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*

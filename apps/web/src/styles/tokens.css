@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Ozatech Services — Design Tokens
+   Derived from the Ozatech badge logo. See docs/03-design-system.md.
+   Import once, at the top of app/globals.css.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand: Navy (from the logo body, helmet and outer ring) ----- */
+  --oz-navy-900: #0B1734;
+  --oz-navy-800: #0D1C3F;
+  --oz-navy-700: #12254F;   /* PRIMARY — logo navy, theme-color */
+  --oz-navy-600: #1C2E5A;
+  --oz-navy-500: #2A3B66;   /* primary container */
+  --oz-navy-300: #6E7CA0;
+  --oz-navy-100: #DDE2EE;
+  --oz-navy-050: #F0F3F9;
+
+  /* ---------- Brand: Gold (from the logo ring and inner disc) ------------- */
+  --oz-gold-700: #5C4800;
+  --oz-gold-600: #745B00;   /* ONLY accessible gold for text on light (6.48:1) */
+  --oz-gold-500: #F2C53D;
+  --oz-gold-300: #FDD669;   /* LOGO GOLD — surface/accent only, never text on light */
+  --oz-gold-100: #FFF1C9;
+  --oz-gold-050: #FFFAEC;
+
+  /* ---------- Aliases ---------------------------------------------------- */
+  --oz-primary:            var(--oz-navy-700);
+  --oz-primary-container:  var(--oz-navy-500);
+  --oz-secondary:          var(--oz-gold-600);
+  --oz-secondary-container:var(--oz-gold-300);
+
+  /* ---------- Surfaces --------------------------------------------------- */
+  --oz-surface:         #F9F9F9;
+  --oz-surface-low:     #F3F4F7;
+  --oz-surface-lowest:  #FFFFFF;
+  --oz-surface-variant: #E8E9F0;
+  --oz-surface-inverse: var(--oz-navy-700);
+
+  /* ---------- Content ---------------------------------------------------- */
+  --oz-on-surface:          #1A1C1C;  /* 17.12:1 on white */
+  --oz-on-surface-variant:  #45464F;  /*  9.37:1 on white */
+  --oz-on-inverse:          #FFFFFF;  /* 14.97:1 on navy-700 */
+  --oz-on-inverse-variant:  rgba(255, 255, 255, .86);
+
+  /* ---------- Outlines ---------------------------------------------------
+     outline        -> interactive control boundaries (4.22:1, meets SC 1.4.11)
+     outline-variant-> DECORATIVE RULES ONLY (1.70:1 — never a control boundary)
+     ----------------------------------------------------------------------- */
+  --oz-outline:         #767B8A;
+  --oz-outline-variant: #C5C6D0;
+
+  /* ---------- Semantic --------------------------------------------------- */
+  --oz-success: #1E7A4B;  --oz-success-container: #E6F2EC;
+  --oz-danger:  #B3261E;  --oz-danger-container:  #FBEAE9;
+  --oz-warning: #8A5A00;  --oz-warning-container: #FBF0DE;
+  --oz-info:    #0B5FA5;  --oz-info-container:    #E5EFF8;
+
+  /* ---------- Typography ------------------------------------------------- */
+  --oz-font-display: var(--font-manrope), Manrope, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --oz-font-body:    var(--font-inter), Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --oz-font-mono:    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --oz-text-display:  clamp(2.25rem, 1.40rem + 3.60vw, 3.500rem);
+  --oz-text-h1:       clamp(2.00rem, 1.40rem + 2.60vw, 3.000rem);
+  --oz-text-h2:       clamp(1.50rem, 1.20rem + 1.40vw, 2.125rem);
+  --oz-text-h3:       clamp(1.25rem, 1.10rem + 0.60vw, 1.500rem);
+  --oz-text-h4:       1.125rem;
+  --oz-text-lead:     clamp(1.0625rem, 1.00rem + 0.40vw, 1.25rem);
+  --oz-text-body:     1rem;
+  --oz-text-body-sm:  0.9375rem;
+  --oz-text-caption:  0.875rem;
+  --oz-text-label:    0.75rem;
+
+  --oz-leading-tight:   1.08;
+  --oz-leading-heading: 1.20;
+  --oz-leading-snug:    1.40;
+  --oz-leading-body:    1.65;
+
+  --oz-tracking-tight:  -0.02em;
+  --oz-tracking-label:   0.06em;
+  --oz-tracking-kicker:  0.14em;
+
+  --oz-measure:       68ch;
+  --oz-measure-short: 48ch;
+
+  /* ---------- Space (4px base) ------------------------------------------- */
+  --oz-space-1:  0.25rem;  /*  4 */
+  --oz-space-2:  0.5rem;   /*  8 */
+  --oz-space-3:  0.75rem;  /* 12 */
+  --oz-space-4:  1rem;     /* 16 */
+  --oz-space-5:  1.25rem;  /* 20 */
+  --oz-space-6:  1.5rem;   /* 24 */
+  --oz-space-8:  2rem;     /* 32 */
+  --oz-space-10: 2.5rem;   /* 40 */
+  --oz-space-12: 3rem;     /* 48 */
+  --oz-space-14: 3.5rem;   /* 56 — section padding, mobile */
+  --oz-space-18: 4.5rem;   /* 72 — section padding, desktop */
+  --oz-space-24: 6rem;     /* 96 — hero padding, sticky-header offset */
+
+  --oz-header-height: 5rem;   /* 80 desktop */
+  --oz-scroll-offset: 6rem;   /* 96 — scroll-margin-top on anchored sections */
+
+  /* ---------- Radii ------------------------------------------------------ */
+  --oz-radius-xs:   8px;
+  --oz-radius-sm:  12px;
+  --oz-radius-md:  14px;
+  --oz-radius-lg:  16px;
+  --oz-radius-xl:  24px;
+  --oz-radius-pill: 999px;
+
+  /* ---------- Elevation (navy-tinted, never black) ----------------------- */
+  --oz-elev-0: none;
+  --oz-elev-1: 0 2px 8px rgba(18, 37, 79, .06);
+  --oz-elev-2: 0 18px 50px rgba(18, 37, 79, .08);
+  --oz-elev-3: 0 24px 60px rgba(18, 37, 79, .10);
+  --oz-elev-4: 0 30px 70px rgba(18, 37, 79, .12);
+
+  /* ---------- Motion ----------------------------------------------------- */
+  --oz-dur-fast: 120ms;
+  --oz-dur-base: 180ms;
+  --oz-dur-slow: 280ms;
+  --oz-ease-standard: cubic-bezier(.2, 0, 0, 1);
+  --oz-ease-out:      cubic-bezier(0, 0, .2, 1);
+
+  /* ---------- Signature surfaces ----------------------------------------- */
+  --oz-hero-bg:
+    radial-gradient(1200px 500px at 15%  0%, rgba(253, 214, 105, .20), transparent 60%),
+    radial-gradient(900px  500px at 90% 15%, rgba(18, 37, 79, .16),    transparent 65%),
+    linear-gradient(180deg, var(--oz-surface-lowest), var(--oz-surface));
+
+  --oz-watermark-bg: radial-gradient(circle at 12px 12px, rgba(197, 198, 208, .14) 1px, transparent 1px);
+  --oz-watermark-size: 24px 24px;
+
+  --oz-footer-bg: linear-gradient(180deg, var(--oz-navy-700), var(--oz-navy-900));
+  --oz-glass-nav-bg: rgba(255, 255, 255, .80);
+  --oz-glass-menu-bg: rgba(255, 255, 255, .92);
+
+  /* ---------- Component tokens (alias only — no raw values) -------------- */
+  --oz-button-primary-bg: linear-gradient(135deg, var(--oz-navy-700), var(--oz-navy-500));
+  --oz-button-primary-fg: var(--oz-on-inverse);
+  --oz-button-primary-shadow: var(--oz-elev-2);
+  --oz-button-secondary-fg: var(--oz-navy-700);
+  --oz-button-secondary-border: 1px solid var(--oz-outline);
+  --oz-button-hover-tint: rgba(18, 37, 79, .06);
+
+  --oz-nav-active-bg: rgba(253, 214, 105, .25);
+  --oz-chip-bg:       rgba(253, 214, 105, .28);
+  --oz-icon-tile-bg:  rgba(18, 37, 79, .06);
+  --oz-icon-tile-bg-inverse: rgba(253, 214, 105, .16);
+
+  --oz-focus-ring:         3px solid var(--oz-gold-600);
+  --oz-focus-ring-inverse: 3px solid var(--oz-gold-300);
+  --oz-focus-offset: 2px;
+
+  --oz-field-border:       1px solid var(--oz-outline);
+  --oz-field-border-focus: 2px solid var(--oz-gold-600);
+  --oz-field-border-error: 2px solid var(--oz-danger);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--oz-surface);
+  color: var(--oz-on-surface);
+  font-family: var(--oz-font-body);
+  font-size: var(--oz-text-body);
+  line-height: var(--oz-leading-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--oz-font-display);
+  color: var(--oz-on-surface);
+  letter-spacing: var(--oz-tracking-tight);
+  line-height: var(--oz-leading-heading);
+}
+
+/* Brand-consistent focus for everything, everywhere. Never remove this. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: var(--oz-focus-ring);
+  outline-offset: var(--oz-focus-offset);
+  border-radius: var(--oz-radius-xs);
+}
+
+.oz-on-inverse :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: var(--oz-focus-ring-inverse);
+}
+
+/* Anchored sections clear the sticky header */
+[id] { scroll-margin-top: var(--oz-scroll-offset); }
+
+/* Backdrop-filter fallback */
+@supports not ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+  :root {
+    --oz-glass-nav-bg: rgba(255, 255, 255, .96);
+    --oz-glass-menu-bg: rgba(255, 255, 255, .98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

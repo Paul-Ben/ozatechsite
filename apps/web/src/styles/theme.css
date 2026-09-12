@@ -1,0 +1,413 @@
+/* Tailwind 4 theme mapping + Ozatech component classes.
+   Foundation tokens live in tokens.css; this file exposes them to Tailwind
+   and defines the handful of composite classes worth naming. */
+
+@theme {
+  --color-navy-900: #0b1734;
+  --color-navy-800: #0d1c3f;
+  --color-navy-700: #12254f;
+  --color-navy-600: #1c2e5a;
+  --color-navy-500: #2a3b66;
+  --color-navy-300: #6e7ca0;
+  --color-navy-100: #dde2ee;
+  --color-navy-50: #f0f3f9;
+
+  --color-gold-700: #5c4800;
+  --color-gold-600: #745b00;
+  --color-gold-500: #f2c53d;
+  --color-gold-300: #fdd669;
+  --color-gold-100: #fff1c9;
+  --color-gold-50: #fffaec;
+
+  --color-surface: #f9f9f9;
+  --color-surface-low: #f3f4f7;
+  --color-surface-lowest: #ffffff;
+  --color-surface-variant: #e8e9f0;
+
+  --color-ink: #1a1c1c;
+  --color-ink-muted: #45464f;
+
+  --color-outline: #767b8a;
+  --color-outline-variant: #c5c6d0;
+
+  --color-success: #1e7a4b;
+  --color-danger: #b3261e;
+  --color-warning: #8a5a00;
+  --color-info: #0b5fa5;
+
+  --font-display: var(--font-manrope), Manrope, Inter, system-ui, sans-serif;
+  --font-body: var(--font-inter), Inter, system-ui, sans-serif;
+
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --shadow-elev-1: 0 2px 8px rgba(18, 37, 79, 0.06);
+  --shadow-elev-2: 0 18px 50px rgba(18, 37, 79, 0.08);
+  --shadow-elev-3: 0 24px 60px rgba(18, 37, 79, 0.1);
+  --shadow-elev-4: 0 30px 70px rgba(18, 37, 79, 0.12);
+}
+
+@layer components {
+  /* ---- Type roles ---- */
+  .oz-display {
+    font-family: var(--oz-font-display);
+    font-size: var(--oz-text-display);
+    font-weight: 800;
+    line-height: var(--oz-leading-tight);
+    letter-spacing: var(--oz-tracking-tight);
+  }
+
+  .oz-h1 {
+    font-family: var(--oz-font-display);
+    font-size: var(--oz-text-h1);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: var(--oz-tracking-tight);
+  }
+
+  .oz-h2 {
+    font-family: var(--oz-font-display);
+    font-size: var(--oz-text-h2);
+    font-weight: 700;
+    line-height: var(--oz-leading-heading);
+    letter-spacing: -0.015em;
+  }
+
+  .oz-h3 {
+    font-family: var(--oz-font-display);
+    font-size: var(--oz-text-h3);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .oz-lead {
+    font-size: var(--oz-text-lead);
+    line-height: 1.6;
+    color: var(--oz-on-surface-variant);
+  }
+
+  .oz-kicker {
+    font-size: var(--oz-text-label);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: var(--oz-tracking-kicker);
+    text-transform: uppercase;
+    color: var(--oz-on-surface-variant);
+  }
+
+  .oz-label {
+    font-size: var(--oz-text-label);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: var(--oz-tracking-label);
+    text-transform: uppercase;
+    color: var(--oz-on-surface-variant);
+  }
+
+  .oz-muted {
+    color: var(--oz-on-surface-variant);
+  }
+
+  /* ---- Buttons ---- */
+  .oz-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--oz-space-2);
+    min-height: 44px;
+    padding: 12px 20px;
+    border-radius: var(--oz-radius-pill);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      filter var(--oz-dur-base) var(--oz-ease-standard),
+      background-color var(--oz-dur-base) var(--oz-ease-standard),
+      transform var(--oz-dur-base) var(--oz-ease-standard);
+  }
+
+  .oz-btn:active {
+    transform: translateY(1px);
+  }
+
+  .oz-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+  }
+
+  .oz-btn-primary {
+    background: var(--oz-button-primary-bg);
+    color: var(--oz-button-primary-fg);
+    border: 0;
+    box-shadow: var(--oz-elev-2);
+  }
+
+  .oz-btn-primary:hover:not(:disabled) {
+    filter: brightness(1.06);
+    color: #fff;
+  }
+
+  .oz-btn-secondary {
+    background: transparent;
+    color: var(--oz-navy-700);
+    border: 1px solid var(--oz-outline);
+  }
+
+  .oz-btn-secondary:hover:not(:disabled) {
+    background: var(--oz-button-hover-tint);
+  }
+
+  .oz-btn-ondark {
+    background: var(--oz-gold-300);
+    color: var(--oz-navy-700);
+    border: 0;
+  }
+
+  .oz-btn-ondark:hover:not(:disabled) {
+    filter: brightness(1.04);
+  }
+
+  /* ---- Surfaces ---- */
+  .oz-card {
+    background: var(--oz-surface-low);
+    border-radius: var(--oz-radius-lg);
+    transition:
+      transform var(--oz-dur-base) var(--oz-ease-standard),
+      background-color var(--oz-dur-base) var(--oz-ease-standard),
+      box-shadow var(--oz-dur-base) var(--oz-ease-standard);
+  }
+
+  .oz-card:hover,
+  .oz-card:focus-within {
+    background: var(--oz-surface-lowest);
+    transform: translateY(-2px);
+    box-shadow: var(--oz-elev-4);
+  }
+
+  .oz-hero-surface {
+    background: var(--oz-hero-bg);
+  }
+
+  .oz-watermark {
+    background-image: var(--oz-watermark-bg);
+    background-size: var(--oz-watermark-size);
+  }
+
+  .oz-glass-nav {
+    background: var(--oz-glass-nav-bg);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--oz-elev-2);
+  }
+
+  .oz-footer-surface {
+    background: var(--oz-footer-bg);
+    color: var(--oz-on-inverse);
+  }
+
+  .oz-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: var(--oz-radius-pill);
+    background: var(--oz-chip-bg);
+    color: var(--oz-navy-700);
+    font-size: var(--oz-text-label);
+    font-weight: 600;
+  }
+
+  .oz-icon-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--oz-radius-md);
+    background: var(--oz-icon-tile-bg);
+    color: var(--oz-navy-700);
+    flex: none;
+  }
+
+  /* ---- Navigation ---- */
+  .oz-nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: var(--oz-radius-pill);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--oz-on-surface);
+    text-decoration: none;
+    transition: background-color var(--oz-dur-base) var(--oz-ease-standard);
+  }
+
+  .oz-nav-link::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 6px;
+    height: 2px;
+    border-radius: var(--oz-radius-pill);
+    background: var(--oz-gold-500);
+    opacity: 0.9;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--oz-dur-base) var(--oz-ease-standard);
+  }
+
+  .oz-nav-link:hover {
+    background: var(--oz-button-hover-tint);
+  }
+
+  .oz-nav-link:hover::after,
+  .oz-nav-link[aria-current='page']::after {
+    transform: scaleX(1);
+  }
+
+  .oz-nav-link[aria-current='page'] {
+    background: var(--oz-nav-active-bg);
+    color: var(--oz-navy-700);
+  }
+
+  /* ---- Layout ---- */
+  .oz-container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 16px;
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1400px) {
+    .oz-container {
+      max-width: 1280px;
+    }
+  }
+
+  .oz-section {
+    padding-block: var(--oz-space-18);
+  }
+
+  .oz-section-tight {
+    padding-block: var(--oz-space-14);
+  }
+
+  @media (max-width: 576px) {
+    .oz-section {
+      padding-block: var(--oz-space-14);
+    }
+  }
+
+  .oz-hr {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--oz-outline-variant),
+      transparent
+    );
+    border: 0;
+  }
+
+  /* ---- Forms ---- */
+  .oz-field {
+    width: 100%;
+    padding: 12px 0;
+    border: 0;
+    border-bottom: var(--oz-field-border);
+    border-radius: 0;
+    background: transparent;
+    color: var(--oz-on-surface);
+    font: inherit;
+  }
+
+  .oz-field:focus {
+    border-bottom: var(--oz-field-border-focus);
+    outline: var(--oz-focus-ring);
+    outline-offset: 4px;
+  }
+
+  .oz-field[aria-invalid='true'] {
+    border-bottom: var(--oz-field-border-error);
+  }
+
+  .oz-field:disabled {
+    opacity: 0.5;
+    border-bottom-color: var(--oz-outline-variant);
+  }
+
+  .oz-form-card {
+    background: var(--oz-surface-lowest);
+    border-radius: var(--oz-radius-lg);
+    box-shadow: var(--oz-elev-3);
+  }
+
+  /* ---- Inverse (navy) surfaces ---- */
+  .oz-on-inverse :where(a, button, [tabindex]):focus-visible {
+    outline: var(--oz-focus-ring-inverse);
+    outline-offset: var(--oz-focus-offset);
+  }
+
+  .oz-footer-link {
+    color: var(--oz-on-inverse-variant);
+    text-decoration: none;
+  }
+
+  .oz-footer-link:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  /* ---- Skip link ---- */
+  .oz-skip {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .oz-skip:focus {
+    left: 16px;
+    top: 16px;
+    z-index: 2000;
+    width: auto;
+    height: auto;
+    padding: 10px 14px;
+    background: var(--oz-surface-lowest);
+    color: var(--oz-navy-700);
+    border-radius: var(--oz-radius-pill);
+    box-shadow: var(--oz-elev-3);
+  }
+}
+
+@keyframes oz-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oz-card:hover,
+  .oz-card:focus-within {
+    transform: none;
+  }
+}

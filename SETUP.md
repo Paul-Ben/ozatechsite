@@ -239,8 +239,8 @@ TLS is provisioned and renewed automatically.
 
 From `docs/09-deployment-railway.md` §7. The first three are hard gates:
 
-- [ ] **Real contact email** replaces `info@ozatech.example` (`src/lib/site.ts`)
-- [ ] **Real phone number** replaces `+0 000 000 000`
+- [x] **Real contact email** replaces `info@ozatech.example` (`src/lib/site.ts`)
+- [x] **Real phone number** replaces `+0 000 000 000`
 - [ ] **Consultation form tested end to end** — submit it, confirm the record and
       both emails arrive
 - [ ] Real logo at `apps/web/public/logo.svg` (see `src/components/ui/Logo.tsx`)

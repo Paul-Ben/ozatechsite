@@ -23,13 +23,14 @@ export const site = {
 
 /**
  * PLACEHOLDERS — blocking launch. See docs/00-executive-summary.md, Q1–Q3.
- * `isPlaceholder` suppresses LocalBusiness structured data and the map embed so
- * we never publish fake contact data.
+ * Email and phone are real; address is still pending (Q3). `isPlaceholder`
+ * suppresses LocalBusiness structured data and the map embed so we never
+ * publish fake contact data — flip it once the address is real too.
  */
 export const contact = {
-  email: 'info@ozatech.example',
-  phone: '+0 000 000 000',
-  phoneHref: '+0000000000',
+  email: 'ozatechinfo@proton.me',
+  phone: '+234 816 266 1399',
+  phoneHref: '+2348162661399',
   hours: 'Mon–Fri · 09:00–17:00',
   address: null as string | null,
   addressIsPublic: false,
